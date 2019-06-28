@@ -1,5 +1,13 @@
 # Changelog
 
+
+## 0.2.0 - 2019-06-28
+
++ Feature:
+
+    + Replace YAPF with Black.
+
+
 ## 0.1.1 - 2019-05-14
 
 + Bugs:
