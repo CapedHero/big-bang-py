@@ -13,11 +13,13 @@ if __name__ == "__main__":
     # is to run your project on Docker and either have ENVs preconfigured
     # or simply pass them during running up the containers.
     from envs.loader import load_envs
+
     load_envs()
 
     # It is usually a good idea to configure the logging as soon as possible.
     import logging.config
     from {{ cookiecutter.project_source_code_dir }}.logging_config import DICT_CONFIG
+
     logging.config.dictConfig(DICT_CONFIG)
 
     # Example of logging
@@ -27,5 +29,6 @@ if __name__ == "__main__":
     # And finally... Your startup code goes below! :)
     # For instance:
     from {{ cookiecutter.project_source_code_dir }}.app import App
+
     app = App()
     app.run()

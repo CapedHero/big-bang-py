@@ -22,7 +22,7 @@ Available tasks:
 
   coverage-report         Open refreshed coverage report in a browser.
   flake8-report           Open refreshed Flake8 report in a browser.
-  linters                 Lint source code using Isort, YAPF, Flake8 and Bandit.
+  linters                 Lint source code using Isort, Black, Flake8 and Bandit.
   make-release            Make a new release - update files, make & tag commit, push to origin.
   run-tests               Run pytests with coverage report.
   set-precommit           Set Pre-commit Git Hook saved in `./githooks/pre-commit`.

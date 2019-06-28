@@ -4,10 +4,21 @@
 #
 #    pip-compile --upgrade --generate-hashes --output-file requirements/locked/base.txt requirements/abstract/base.in
 #
+click==7.0 \
+    --hash=sha256:2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13 \
+    --hash=sha256:5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7 \
+    # via pip-tools
 invoke==1.2.0 \
     --hash=sha256:4f4de934b15c2276caa4fbc5a3b8a61c0eb0b234f2be1780d2b793321995c2d6 \
     --hash=sha256:dc492f8f17a0746e92081aec3f86ae0b4750bf41607ea2ad87e5a7b5705121b7 \
     --hash=sha256:eb6f9262d4d25b40330fb21d1e99bf0f85011ccc3526980f8a3eaedd4b43892e
+pip-tools==3.6.1 \
+    --hash=sha256:603d374e43bfa02e7a775b58c25a203799155d42f89ef94ee445eb7ae116439f \
+    --hash=sha256:7c52bd17e8b8003a0d8daf5ac6e98c38097223508993fefb440c7e333a09f345
 python-dotenv==0.10.1 \
     --hash=sha256:a84569d0e00d178bc5b957f7ff208bf49287cbf61857c31c258c4a91f571527b \
     --hash=sha256:c9b1ddd3cdbe75c7d462cb84674d87130f4b948f090f02c7d7144779afb99ae0
+six==1.12.0 \
+    --hash=sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c \
+    --hash=sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73 \
+    # via pip-tools

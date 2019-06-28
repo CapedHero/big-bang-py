@@ -2,6 +2,7 @@
 
 bandit==1.5.1
 better-exceptions==0.2.2
+black==19.3b0
 flake8==3.7.7
 flake8-bugbear==19.3.0
 flake8-commas==2.0.0
@@ -24,4 +25,3 @@ pytest-socket==0.3.3
 pytest-sugar==0.9.2
 safety==1.8.5
 Werkzeug==0.15.2
-yapf==0.27.0

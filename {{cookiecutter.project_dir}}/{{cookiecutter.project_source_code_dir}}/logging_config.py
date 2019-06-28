@@ -7,17 +7,9 @@ os.makedirs(logs_folder, exist_ok=True)
 
 DICT_CONFIG = {
     "version": 1,
-    "formatters": {
-        "standard": {
-            "format": "%(asctime)s %(name)-8s %(levelname)-8s %(message)s",
-        },
-    },
+    "formatters": {"standard": {"format": "%(asctime)s %(name)-8s %(levelname)-8s %(message)s"}},
     "handlers": {
-        "stderr": {
-            "class": "logging.StreamHandler",
-            "level": "DEBUG",
-            "formatter": "standard",
-        },
+        "stderr": {"class": "logging.StreamHandler", "level": "DEBUG", "formatter": "standard"},
         "rotating_file_handler": {
             "class": "logging.handlers.RotatingFileHandler",
             "level": "DEBUG",
@@ -35,6 +27,6 @@ DICT_CONFIG = {
             "handlers": ["stderr", "rotating_file_handler"],
             "level": "DEBUG",
             "propagate": True,
-        },
+        }
     },
 }

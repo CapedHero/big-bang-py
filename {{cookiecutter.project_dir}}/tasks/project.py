@@ -21,21 +21,20 @@ def flake8_report(c):
     """Open refreshed Flake8 report in a browser."""
     c.run(
         command=(
-            "python -m flake8 --format=html --htmldir=flake-report; "
-            "open flake-report/index.html"
+            "python -m flake8 --format=html --htmldir=flake-report; open flake-report/index.html"
         ),
-        pty=True
+        pty=True,
     )
 
 
 @invoke.task
 def linters(c):
-    """Lint source code using Isort, YAPF, Flake8 and Bandit."""
+    """Lint source code using Isort, Black, Flake8 and Bandit."""
     cowsay("Isort - Sort Yer Python Imports", print_end="\n")
     c.run("python -m isort --apply --quiet", pty=True)
 
-    cowsay("YAPF - Yet Another Python Formatter", print_end="\n")
-    c.run("python -m yapf --in-place --recursive ci/ envs/ githooks/ {{ cookiecutter.project_source_code_dir }}/ tasks/ tests/", pty=True)
+    cowsay("Black - The Uncompromising Python Code Formatter", print_end="\n\n")
+    c.run("black --line-length=100 --exclude=venv .", pty=True)
 
     cowsay("Flake8 & Happy Plugins Family", print_end="\n")
     c.run("python -m flake8", pty=True)
@@ -54,11 +53,11 @@ def set_precommit(c):
             # Make Flake8 failures prevent commits.
             "&& git config --bool flake8.strict true"
         ),
-        pty=True
+        pty=True,
     )
 
 
 @invoke.task
 def run_tests(c, tests="tests"):
     """Run pytests with coverage report."""
-    c.run(f"python -m pytest {tests} --cov={{ cookiecutter.project_source_code_dir }} --cov-branch", pty=True)
+    c.run(f"python -m pytest {tests} --cov=src --cov-branch", pty=True)

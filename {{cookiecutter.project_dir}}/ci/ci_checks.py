@@ -13,7 +13,7 @@ from {{ cookiecutter.project_source_code_dir }}.utils import cowsay
 def run_ci_checks():
     _run_pytests()
     _check_imports_order_with_isort()
-    _check_code_formatting_with_yapf()
+    _check_code_formatting_with_black()
     _check_code_style_with_flake8()
     _check_security_issues_with_bandit()
     _check_python_packages_safety()
@@ -40,27 +40,23 @@ def _check_imports_order_with_isort():
         sys.exit(isort_exit_status)
 
 
-def _check_code_formatting_with_yapf():
-    cowsay("Code Formatting Check (YAPF)")
-    yapf_cmd = [
-        "yapf", "--recursive", "--diff", "ci/", "envs/", "githooks/", "{{ cookiecutter.project_source_code_dir }}/", "tasks/", "tests/"
-    ]
-    yapf_return_code = subprocess.run(yapf_cmd).returncode  # nosec
-    if yapf_return_code == 0:
-        print("YAPF Exit Status: 0 => OK!")
+def _check_code_formatting_with_black():
+    cowsay("Code Formatting Check (Black)")
+    black_cmd = ["black", "--line-length=100", "--exclude=venv", "--check", "."]
+    black_return_code = subprocess.run(black_cmd).returncode  # nosec
+    if black_return_code == 0:
+        print("")
+        print("Black Exit Status: 0 => OK!")
     else:
         print("")
-        print(f"YAPF Exit Status: {yapf_return_code} => aborting commit!")
+        print(f"Black Exit Status: {black_return_code} => aborting commit!")
         print("")
-        sys.exit(yapf_return_code)
+        sys.exit(black_return_code)
 
 
 def _check_code_style_with_flake8():
     cowsay("Flake8 Style Guide Enforcement")
-    flake8_return_code = git.hook(
-        strict=git.config_for("strict"),
-        lazy=git.config_for("lazy"),
-    )
+    flake8_return_code = git.hook(strict=git.config_for("strict"), lazy=git.config_for("lazy"))
     if flake8_return_code == 0:
         print("Flake8 Exit Status: 0 => OK!")
         print("")

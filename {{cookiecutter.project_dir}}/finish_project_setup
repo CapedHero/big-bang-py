@@ -25,7 +25,6 @@ echo '###########################################'
 invoke set-precommit
 .git/hooks/pre-commit
 
-echo ''
 echo '#######################################'
 echo '# Scripts Auto-Destruction Activated! # '
 echo '#######################################'

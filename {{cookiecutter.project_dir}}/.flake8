@@ -25,17 +25,17 @@ ignore =
 
     # E241: multiple spaces after ','
     #
-    # YAPF takes care of it.
+    # Black takes care of it.
     E241,
 
     # E402: module level import not at top of file
     #
-    # YAPF takes care of it.
+    # Black takes care of it.
     E402,
 
     # E501: line too long
     #
-    # YAPF takes care of it.
+    # Black takes care of it.
     E501,
 
     # W503: line break before binary operator

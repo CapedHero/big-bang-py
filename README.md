@@ -27,7 +27,7 @@
 
 + Configured logging.
 
-+ Configured YAPF.
++ Configured Black.
 
 + Ready-to-go CI script.
 
