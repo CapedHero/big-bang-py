@@ -1,6 +1,6 @@
 # Big-Bang-py
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) template for Python projects. RTB House flavor.
+[Cookiecutter](https://github.com/audreyr/cookiecutter) template for Python projects. CapedHero flavor🍹
 
 
 ## Features
@@ -31,7 +31,7 @@
 
 + Ready-to-go CI script.
 
-+ Basic Invoke tasks (**including automation of making a release!**)
++ Basic Invoke tasks (**including automation of making a release!**).
 
 + Basic project structure (`main.py`, `source_code_dir`, `requirements`, `tests`, etc.).
 
