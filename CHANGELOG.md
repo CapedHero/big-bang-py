@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.1 - 2019-07-31
+
++ Bugs:
+
+    + Fix ownership. 
+
++ Miscellaneous:
+
+    + Update Isort config.
+
 
 ## 0.2.0 - 2019-06-28
 
